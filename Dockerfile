@@ -1,7 +1,7 @@
 FROM resin/raspberrypi3-buildpack-deps:jessie
 
 RUN apt-get -y update \
-        && apt-get -y install curl python python-dev python-opencv python-serial unzip supervisor libzmq3 libzmq3-dev v4l-utils
+        && apt-get -y install curl python3 python3-dev unzip supervisor libzmq3 libzmq3-dev v4l-utils
 
 # GStreamer        
 RUN apt-get install gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-omx
