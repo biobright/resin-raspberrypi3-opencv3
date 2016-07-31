@@ -1,6 +1,11 @@
 # ResinOCVBuild
 ResinOS image with stuff necessary for compiling OpenCV
 ---
+Two ways to get OCV3 onto Resin devices:  
+- Build on Resin device of same version as target; upload build to S3 bucket; fetch as part of resin build process
+- Cross-compile using Buildroot; upload to S3 bucket; fetch during build process.  
+Right now we're building natively because it's not too much of a hassle (5 hr build time on RPi3)
+---
 
 ## Cross-compiling OpenCV3/stuff
 [See OpenCV dox](http://docs.opencv.org/3.0-beta/doc/tutorials/introduction/crosscompilation/arm_crosscompile_with_cmake.html)
