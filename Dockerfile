@@ -12,8 +12,7 @@ RUN packages="curl python python-dev unzip supervisor libzmq3 libzmq3-dev v4l-ut
     || apt-get -y install $packages
 
 # Fix for broken, un-uninstallable pip from apt-get
-# Pip installation of some stuff e.g. numpy might really slow down the install
-# because it's compiling instead of using apt version
+# installs tinys3
 RUN curl https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install -U pip
 RUN pip install -I -r /usr/src/app/requirements.txt 
