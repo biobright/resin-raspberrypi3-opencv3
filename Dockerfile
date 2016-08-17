@@ -1,4 +1,5 @@
 FROM resin/raspberrypi3-buildpack-deps:jessie
+MAINTAINER Nate Johnson <nate@biobright.org>
 
 # GStreamer  and openCV deps
 # Several retries is a workaround for flaky downloads
@@ -10,6 +11,9 @@ RUN packages="curl python python-dev unzip supervisor libzmq3 libzmq3-dev v4l-ut
     || apt-get -y install $packages \
     || apt-get -y install $packages
 
+# We might consider installing pip, pip3, pip numpy here
+# if it provides any performance/bug fixes
+    
 # OpenCV installation
 # this says it can't find lots of stuff, but VideoCapture(0) and Python3 bindings work.
 # IDK if LAPACK/BLAS/etc works, or gstreamer backend
