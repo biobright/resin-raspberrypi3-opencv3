@@ -1,11 +1,14 @@
 #!/bin/bash
 
 DOCKERHUB_REPO='biobrightllc/resin-raspberrypi3-opencv3'
+FIX_BINFMT=false
+
 # This is necessary to make qemu run armv7l binaries during docker builds
-sudo mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc  
-sudo echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-static:' > /proc/sys/fs/binfmt_misc/register  
-
-
+if $FIX_BINFMT ; then
+    echo 'Setting up machine to run armv7l binaries with qemu...'
+    sudo mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc  
+    sudo echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-static:' > /proc/sys/fs/binfmt_misc/register  
+fi
 
 # You'll need to login to Dockerhub with
 # docker login -u $USERNAME -p $PASSWORD
