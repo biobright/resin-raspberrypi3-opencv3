@@ -46,4 +46,5 @@ RUN cd /tmp \
     && make install \
     && make package \
     && make clean \
-    && cd /
+    && cd / \
+    && rm -rf /tmp/*opencv*
