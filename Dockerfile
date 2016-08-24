@@ -45,4 +45,5 @@ RUN cd /tmp \
     && make -j`nproc` \
     && make install \
     && make package \
+    && make clean \
     && cd /
