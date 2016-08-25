@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKERHUB_REPO='biobright/resin-raspberrypi3-opencv3'
-FIX_BINFMT=false
+FIX_BINFMT=true
 
 # This is necessary to make qemu run armv7l binaries during docker builds
 if $FIX_BINFMT ; then
