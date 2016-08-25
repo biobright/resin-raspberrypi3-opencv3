@@ -13,3 +13,5 @@ newgrp docker
 Then run `./build.sh` to build and push the docker image.  
 ---  
 `build.sh` stuff enabled with environmental variable `FIX_BINFMT` tells your machine to use QEMU to interpret ARMv7l binaries. This can also be accomplished with [resin.io's patched QEMU](https://github.com/resin-io/qemu).
+
+mAnCyAdouscRiNEo
