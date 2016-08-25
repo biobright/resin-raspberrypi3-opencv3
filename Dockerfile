@@ -18,9 +18,10 @@ RUN packages="curl python python-dev unzip supervisor libzmq3 libzmq3-dev v4l-ut
 # this says it can't find lots of stuff, but VideoCapture(0) and Python3 bindings work.
 # IDK if LAPACK/BLAS/etc works, or gstreamer backend
 # TODO: Where are the build logs?
+# PYTHON_DEFAULT_EXECUTABLE
 RUN cd /tmp \
-    && git clone https://github.com/opencv/opencv \
-    && git clone https://github.com/opencv/opencv_contrib \
+    && git clone git://github.com/opencv/opencv \
+    && git clone git://github.com/opencv/opencv_contrib \
     && cd opencv \
     && mkdir build \
     && cd build \
