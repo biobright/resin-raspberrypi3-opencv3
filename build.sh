@@ -12,5 +12,5 @@ fi
 
 # You'll need to login to Dockerhub with
 # docker login -u $USERNAME -p $PASSWORD
-docker build -t $DOCKERHUB_REPO .
+docker build --no-cache -t $DOCKERHUB_REPO .
 docker push $DOCKERHUB_REPO
